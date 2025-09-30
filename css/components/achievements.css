@@ -1,0 +1,99 @@
+/* ---------- ACHIEVEMENTS ---------- */
+.timeline{
+  position:relative;
+  display:grid;
+  gap:2.3rem;
+  margin:2.1rem 0 0;
+}
+
+.timeline::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:0;
+  bottom:0;
+  width:3px;
+  background:linear-gradient(var(--accent),var(--accent-alt));
+  transform:translateX(-50%);
+  opacity:.35;
+}
+
+.milestone{
+  background:linear-gradient(135deg,var(--surface),var(--surface-alt));
+  border:1px solid var(--border);
+  border-radius:26px;
+  padding:1.15rem 1.25rem 1.35rem;
+  display:grid;
+  gap:.7rem;
+  box-shadow:0 10px 28px -18px rgba(0,0,0,.55);
+  position:relative;
+  width:calc(50% - 2rem);
+}
+
+.milestone:nth-child(odd){
+  justify-self:start;
+}
+
+.milestone:nth-child(even){
+  justify-self:end;
+}
+
+.milestone::before{
+  content:"";
+  position:absolute;
+  top:20px;
+  width:16px;
+  height:16px;
+  border-radius:50%;
+  background:var(--grad-accent);
+  box-shadow:0 0 0 6px color-mix(in srgb,var(--accent) 30%,transparent);
+}
+
+.milestone:nth-child(odd)::before{
+  right:-38px;
+}
+
+.milestone:nth-child(even)::before{
+  left:-38px;
+}
+
+.milestone h3{
+  font-size:1rem;
+  font-weight:800;
+}
+
+.milestone time{
+  font-size:.63rem;
+  letter-spacing:.23em;
+  font-weight:700;
+  color:var(--text-faint);
+  text-transform:uppercase;
+}
+
+.milestone p{
+  font-size:.76rem;
+  color:var(--text-dim);
+  line-height:1.5;
+}
+
+@media (max-width:900px){
+  .milestone,
+  .milestone:nth-child(even),
+  .milestone:nth-child(odd){
+    width:100%;
+  }
+  
+  .timeline::before{
+    left:10px;
+    transform:none;
+  }
+  
+  .milestone{
+    padding-left:2.2rem;
+  }
+  
+  .milestone::before{
+    left:-10px !important;
+    right:auto;
+  }
+}

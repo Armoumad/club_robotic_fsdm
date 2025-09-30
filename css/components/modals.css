@@ -1,0 +1,320 @@
+/* ---------- MODALS / LIGHTBOX ---------- */
+.backdrop{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.55);
+  backdrop-filter:blur(10px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:2rem clamp(1rem,3vw,2.4rem);
+  z-index:300;
+  opacity:0;
+  pointer-events:none;
+  transition:.45s;
+}
+
+.backdrop.open{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.modal{
+  background:linear-gradient(140deg,var(--surface),var(--surface-alt));
+  border:1px solid var(--border);
+  width:min(1000px,100%);
+  border-radius:34px;
+  padding:clamp(1.6rem,2vw,2.4rem);
+  display:grid;
+  gap:1rem;
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  box-shadow:0 25px 65px -28px rgba(0,0,0,.65);
+}
+
+.modal::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(900px 650px at 18% 25%,color-mix(in srgb,var(--accent) 30%,transparent),transparent 65%),
+    radial-gradient(900px 650px at 85% 75%,color-mix(in srgb,var(--accent-alt) 30%,transparent),transparent 65%);
+  opacity:.5;
+  mix-blend-mode:plus-lighter;
+  pointer-events:none;
+}
+
+.close-modal{
+  position:absolute;
+  top:.9rem;
+  right:.9rem;
+  width:50px;
+  height:50px;
+  border-radius:18px;
+  background:color-mix(in srgb,var(--accent) 22%,transparent);
+  border:1px solid color-mix(in srgb,var(--accent) 40%,transparent);
+  display:grid;
+  place-items:center;
+  color:var(--accent-alt);
+  font-size:1rem;
+  transition:var(--trans);
+}
+
+.close-modal:hover{
+  background:var(--grad-accent);
+  color:#fff;
+  transform:rotate(8deg);
+}
+
+.modal-avatar{
+  width:260px;
+  max-width:100%;
+  aspect-ratio:1;
+  border-radius:50%;
+  overflow:hidden;
+  background:linear-gradient(140deg,var(--accent),var(--accent-alt));
+  box-shadow:0 0 0 1px #ffffff10 inset,0 10px 30px -15px rgba(0,0,0,.65);
+}
+
+.modal-avatar img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+#prAvatar,
+#cpAvatar{
+  aspect-ratio:16/11;
+  border-radius:28px;
+}
+
+.modal h3{
+  font-size:clamp(1.6rem,2.2vw,2.3rem);
+  font-weight:900;
+  background:var(--grad-accent);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.modal-role{
+  font-size:.78rem;
+  letter-spacing:.42em;
+  font-weight:800;
+  color:var(--accent-alt);
+  margin:.4rem 0 .8rem;
+}
+
+.modal-text{
+  font-size:.88rem;
+  color:var(--text-dim);
+  line-height:1.65;
+}
+
+.social-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.75rem;
+}
+
+.social-links a{
+  width:52px;
+  height:52px;
+  border-radius:18px;
+  background:color-mix(in srgb,var(--accent) 20%,transparent);
+  border:1px solid color-mix(in srgb,var(--accent) 40%,transparent);
+  color:var(--accent-alt);
+  display:grid;
+  place-items:center;
+  font-size:1rem;
+  transition:var(--trans);
+}
+
+.social-links a:hover{
+  background:var(--grad-accent);
+  color:#fff;
+  transform:translateY(-6px);
+}
+
+.team-title{
+  font-size:.7rem;
+  letter-spacing:.28em;
+  font-weight:800;
+  margin:1rem 0 .7rem;
+  color:var(--accent-alt);
+  text-transform:uppercase;
+}
+
+/* ---------- GALLERY MODAL ---------- */
+.gallery-modal .modal {
+  max-width: 1200px;
+  width: 95%;
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-main {
+  position: relative;
+  aspect-ratio: 16/9;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--bg-soft);
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+}
+
+.gallery-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity 0.3s;
+}
+
+.gallery-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+}
+
+.gallery-counter {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  font-weight: 600;
+}
+
+.gallery-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.gallery-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--accent) 20%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+  color: var(--accent-alt);
+  display: grid;
+  place-items: center;
+  transition: var(--trans);
+  cursor: pointer;
+}
+
+.gallery-btn:hover:not(:disabled) {
+  background: var(--grad-accent);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.gallery-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.gallery-thumbnails {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 0.5rem;
+  max-height: 120px;
+  overflow-y: auto;
+  padding: 0.5rem;
+  background: color-mix(in srgb, var(--bg) 50%, transparent);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.gallery-thumb {
+  aspect-ratio: 4/3;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: var(--trans);
+  opacity: 0.6;
+}
+
+.gallery-thumb.active {
+  border-color: var(--accent);
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.gallery-thumb:hover {
+  opacity: 1;
+  transform: scale(1.03);
+}
+
+.gallery-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.download-btn {
+  background: var(--grad-accent);
+  color: #fff;
+  border: none;
+}
+
+.download-btn:hover {
+  background: var(--grad-accent);
+  color: #fff;
+}
+
+/* ---------- LIGHTBOX ---------- */
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.85);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:2rem;
+  z-index:400;
+  opacity:0;
+  pointer-events:none;
+  transition:.5s;
+}
+
+.lightbox.open{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.lightbox figure{
+  max-width:min(1200px,90vw);
+  max-height:80vh;
+  position:relative;
+}
+
+.lightbox img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  border-radius:22px;
+}
+
+.lightbox button{
+  position:absolute;
+  top:.8rem;
+  right:.8rem;
+  width:52px;
+  height:52px;
+  border-radius:18px;
+  background:var(--grad-accent);
+  color:#fff;
+  font-size:1.05rem;
+  display:grid;
+  place-items:center;
+  transition:var(--trans);
+}
+
+.lightbox button:hover{
+  transform:scale(1.05) rotate(8deg);
+}

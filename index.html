@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark" data-accent="purple">
+<head>
+  <meta charset="UTF-8" />
+  <title>FSDM Robotics Club – Portfolio</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="FSDM Robotics Club: robotique, IA, IoT, projets, équipe, compétitions, sponsors, événements, actualités et contact." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components/header.css">
+  <link rel="stylesheet" href="css/components/hero.css">
+  <link rel="stylesheet" href="css/components/team.css">
+  <link rel="stylesheet" href="css/components/projects.css">
+  <link rel="stylesheet" href="css/components/news.css">
+  <link rel="stylesheet" href="css/components/events.css">
+  <link rel="stylesheet" href="css/components/competitions.css">
+  <link rel="stylesheet" href="css/components/sponsors.css">
+  <link rel="stylesheet" href="css/components/achievements.css">
+  <link rel="stylesheet" href="css/components/contact.css">
+  <link rel="stylesheet" href="css/components/footer.css">
+  <link rel="stylesheet" href="css/components/modals.css">
+</head>
+<body>
+  <header id="siteHeader">
+    <div id="scrollProgress"></div>
+    <div class="container nav">
+      <div class="brand">
+        <img src="images/clubrobotics.png" alt="Logo FSDM Robotics" style="height:50px;vertical-align:middle;">
+        FSDM ROBOTICS
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero" class="active"><span>Accueil</span></a></li>
+        <li><a href="#team"><span>Équipe</span></a></li>
+        <li><a href="#projects"><span>Projets</span></a></li>
+        <li><a href="#news"><span>Actualités</span></a></li>
+        <li><a href="#gallery"><span>Événements</span></a></li>
+        <li><a href="#competitions"><span>Compétitions</span></a></li>
+        <li><a href="#sponsors"><span>Sponsors</span></a></li>
+        <li><a href="#achievements"><span>Réalisations</span></a></li>
+        <li><a href="#contact"><span>Contact</span></a></li>
+      </ul>
+      <div class="controls">
+        <button class="theme-toggle" id="themeToggle" aria-label="Basculer le thème"><i class="fas fa-moon"></i></button>
+        <button class="menu-btn" id="menuBtn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <!-- HERO -->
+<section id="hero" class="hero">
+  <div class="container hero-grid">
+    <!-- Partie GAUCHE - Texte principal -->
+    <div class="fade">
+      <h1>Innover, Construire & Partager la Robotique</h1>
+      <div class="accent-picker" aria-label="Couleur accent">
+        <button class="accent-btn" data-accent="purple" title="Violet"></button>
+        <button class="accent-btn" data-accent="red" title="Rouge"></button>
+        <button class="accent-btn" data-accent="blue" title="Bleu"></button>
+        <button class="accent-btn" data-accent="green" title="Vert"></button>
+        <button class="accent-btn" data-accent="orange" title="Orange"></button>
+      </div>
+      <p class="lead">Le FSDM Robotics Club rassemble des étudiants passionnés autour de projets en robotique, IA, systèmes embarqués, vision et mécatronique pour apprendre par la pratique.</p>
+      <div class="actions">
+        <a class="btn" href="#projects"><i class="fas fa-rocket"></i> Projets</a>
+        <a class="btn outline" href="#team"><i class="fas fa-users"></i> Équipe</a>
+      </div>
+    </div>
+
+    <!-- Partie DROITE - Actualités Récentes -->
+    <div class="hero-news fade" style="animation-delay:.12s">
+      <div class="hero-news-inner">
+        <div class="hero-news-head">
+          <h3>Actualités Récentes</h3>
+          <a href="#news" class="hn-more">
+            Tout voir <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        <ul class="hero-news-list" id="heroNewsList" aria-live="polite"></ul>
+        <div class="hero-news-footer">
+          <a href="#news" class="btn-mini">
+            Plus d'annonces <i class="fas fa-bullhorn"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- TEAM -->
+  <section id="team" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Meet Our Team</h2>
+        <p>10 passionné·e·s qui conçoivent, prototypent et font évoluer nos plateformes robotiques.</p>
+      </div>
+      <div class="grid" data-section="team"></div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Projets</h2>
+        <p>Plateformes autonomes, systèmes intelligents et prototypes mécatroniques.</p>
+      </div>
+      <div class="cards" data-section="projects"></div>
+    </div>
+  </section>
+
+  <!-- NEWS -->
+  <section id="news" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Actualités & Annonces</h2>
+        <p>Workshops, compétitions, recrutements et évolutions organisationnelles.</p>
+      </div>
+      <div class="news-grid" data-section="news"></div>
+    </div>
+  </section>
+
+  <!-- EVENTS / GALLERY -->
+  <section id="gallery" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Événements & Galerie</h2>
+        <p>Moments forts, démonstrations, ateliers et participations externes.</p>
+      </div>
+      <div class="event-grid" data-section="events"></div>
+    </div>
+  </section>
+
+  <!-- COMPETITIONS -->
+  <section id="competitions" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Compétitions</h2>
+        <p>Performances passées, équipes engagées et préparation des prochaines échéances.</p>
+      </div>
+      <div class="comp-grid" data-section="competitions"></div>
+    </div>
+  </section>
+
+  <!-- SPONSORS -->
+  <section id="sponsors" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Nos Sponsors & Partenaires</h2>
+        <p>Merci à ceux qui croient en notre vision.</p>
+      </div>
+      <div class="sponsors-container">
+        <a class="sponsor-card fade" style="animation-delay:.05s" href="https://exemple-it-ai-club.com" target="_blank" rel="noopener noreferrer" aria-label="Visiter le site du FSDM IT & AI Club">
+          <div class="sponsor-logo">
+            <img src="images/clubitandiatrans.png" alt="Logo FSDM IT & AI Club">
+          </div>
+          <h3 class="sponsor-name">FSDM IT & AI Club</h3>
+          <p class="sponsor-type">Partenaire</p>
+        </a>
+
+        <a class="sponsor-card fade" style="animation-delay:.12s" href="https://www.fsdm.usmba.ac.ma/" target="_blank" rel="noopener noreferrer" aria-label="Visiter le site de la Faculté des Sciences Dhar El Mahraz (FSDM)">
+          <div class="sponsor-logo">
+            <img src="images/logofsdmtrans.png" alt="Logo FSDM">
+          </div>
+          <h3 class="sponsor-name">FSDM</h3>
+          <p class="sponsor-type">Partenaire Académique</p>
+        </a>
+
+        <a class="sponsor-card fade" style="animation-delay:.18s" href="https://www.usmba.ac.ma/~usmba2/" target="_blank" rel="noopener noreferrer" aria-label="Visiter le site de l'Université Sidi Mohamed Ben Abdellah">
+          <div class="sponsor-logo">
+            <img src="images/usmbalogotrans.png" alt="Logo Université Sidi Mohamed Ben Abdellah">
+          </div>
+          <h3 class="sponsor-name">Université Sidi Mohamed Ben Abdellah</h3>
+          <p class="sponsor-type">Institution</p>
+        </a>
+      </div>
+    </div>
+  </section>  
+
+  <!-- ACHIEVEMENTS -->
+  <section id="achievements" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Réalisations</h2>
+        <p>Jalons techniques, prix et évolutions marquantes.</p>
+      </div>
+      <div class="timeline" data-section="achievements"></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Contactez-Nous</h2>
+        <p>Rejoignez-nous dans cette aventure technologique.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="info-card fade">
+            <div class="info-icon"><i class="fas fa-envelope"></i></div>
+            <div class="info-body">
+              <h4>Email</h4>
+              <a href="mailto:fsdmclub4robotics@gmail.com">fsdmclub4robotics@gmail.com</a>
+            </div>
+          </div>
+          <div class="info-card fade" style="animation-delay:.06s">
+            <div class="info-icon"><i class="fas fa-phone"></i></div>
+            <div class="info-body">
+              <h4>Téléphone</h4>
+              <a href="tel:+212693321517">+212 693 321 517</a>
+            </div>
+          </div>
+          <div class="info-card fade" style="animation-delay:.12s">
+            <div class="info-icon"><i class="fas fa-location-dot"></i></div>
+            <div class="info-body">
+              <h4>Adresse</h4>
+              <p>FSDM, Dhar El Mahraz, Fès</p>
+            </div>
+          </div>
+          <div class="info-card fade" style="animation-delay:.18s">
+            <div class="info-icon"><i class="fas fa-clock"></i></div>
+            <div class="info-body">
+              <h4>Horaires</h4>
+              <p>Lun – Ven: 14h – 18h</p>
+            </div>
+          </div>
+          <div class="info-card fade" style="animation-delay:.24s">
+            <div class="info-icon"><i class="fas fa-share-nodes"></i></div>
+            <div class="info-body">
+              <h4>Réseaux</h4>
+              <p>
+                <a href="https://www.instagram.com/fsdm_robotics" target="_blank" rel="noopener">Instagram</a> ·
+                <a href="https://www.linkedin.com/company/fsdm-robotics-club" target="_blank" rel="noopener">LinkedIn</a> ·
+                <a href="https://www.facebook.com/fsdmrobotics" target="_blank" rel="noopener">Facebook</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form-wrap fade" style="animation-delay:.15s">
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-row-2">
+              <div class="field-group">
+                <label for="fullname">Nom Complet</label>
+                <input id="fullname" name="fullname" class="field" placeholder="Votre nom" required />
+              </div>
+              <div class="field-group">
+                <label for="email">Email</label>
+                <input id="email" name="email" class="field" type="email" placeholder="vous@example.com" required />
+              </div>
+            </div>
+            <div class="form-row-2">
+              <div class="field-group">
+                <label for="subject">Sujet</label>
+                <input id="subject" name="subject" class="field" placeholder="Objet" required />
+              </div>
+              <div class="field-group">
+                <label for="topic">Type</label>
+                <select id="topic" name="topic" class="field" required>
+                  <option value="">Choisir...</option>
+                  <option value="adhesion">Adhésion</option>
+                  <option value="partenariat">Partenariat</option>
+                  <option value="competition">Compétition</option>
+                  <option value="media">Média / Presse</option>
+                  <option value="autre">Autre</option>
+                </select>
+              </div>
+            </div>
+            <div class="field-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" class="field" rows="5" placeholder="Écrivez votre message..." required></textarea>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="submit-btn" id="submitBtn">
+                <i class="fas fa-paper-plane"></i> Envoyer le Message
+              </button>
+              <div id="formStatus" class="form-status" aria-live="polite"></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-brand"><i class="fas fa-robot"></i> FSDM Robotics</div>
+        <p class="footer-description">Plateforme d'apprentissage et d'innovation en robotique, IA et mécatronique.</p>
+        <div class="social-row">
+          <a href="https://www.instagram.com/fsdm_robotics" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/fsdm-robotics-club" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.facebook.com/fsdmrobotics" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="mailto:fsdmclub4robotics@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="#hero">Accueil</a>
+        <a href="#team">Équipe</a>
+        <a href="#projects">Projets</a>
+        <a href="#news">Actualités</a>
+        <a href="#competitions">Compétitions</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:fsdmclub4robotics@gmail.com">fsdmclub4robotics@gmail.com</a>
+        <a href="tel:+212693321517">+212 693 321 517</a>
+        <a href="#">Fès – FSDM</a>
+      </div>
+      <div class="footer-col">
+        <h4>Ressources</h4>
+        <a href="#">Documentation</a>
+        <a href="#">Open Source</a>
+        <a href="#">Partenariats</a>
+      </div>
+    </div>
+    <div class="copyright">&copy; <span id="year"></span> FSDM Robotics Club. Tous droits réservés.</div>
+  </footer>
+
+  <!-- MODALS -->
+  <div class="backdrop" id="teamModal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-label="Détails membre">
+      <button class="close-modal" data-close><i class="fas fa-xmark"></i></button>
+      <div class="modal-avatar" id="tmAvatar"></div>
+      <div>
+        <h3 id="tmName"></h3>
+        <div class="modal-role" id="tmRole"></div>
+        <p class="modal-text" id="tmBio"></p>
+        <div class="chip-row" id="tmSkills"></div>
+        <div class="social-links" id="tmLinks"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="backdrop" id="projectModal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-label="Détails projet">
+      <button class="close-modal" data-close><i class="fas fa-xmark"></i></button>
+      <div class="modal-avatar" id="prAvatar"></div>
+      <div>
+        <h3 id="prTitle"></h3>
+        <div class="modal-role" id="prTags"></div>
+        <p class="modal-text" id="prDesc"></p>
+        <div class="chip-row" id="prTech"></div>
+        <div class="social-links" id="prLinks"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="backdrop" id="competitionModal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-label="Détails compétition">
+      <button class="close-modal" data-close><i class="fas fa-xmark"></i></button>
+      <div class="modal-avatar" id="cpAvatar"></div>
+      <div>
+        <h3 id="cpTitle"></h3>
+        <div class="modal-role" id="cpStatus"></div>
+        <p class="modal-text" id="cpDesc"></p>
+        <div class="chip-row" id="cpTags"></div>
+        <h4 class="team-title">Équipe</h4>
+        <div class="chip-row" id="cpRoster"></div>
+        <div class="social-links" id="cpLinks"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GALLERY MODAL -->
+  <div class="backdrop gallery-modal" id="galleryModal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-label="Galerie photos">
+      <button class="close-modal" data-close><i class="fas fa-xmark"></i></button>
+      
+      <div class="gallery-main">
+        <img id="galleryCurrent" alt="" loading="lazy">
+      </div>
+      
+      <div class="gallery-nav">
+        <div class="gallery-counter">
+          Photo <span id="galleryIndex">1</span> sur <span id="galleryTotal">0</span>
+        </div>
+        <div class="gallery-controls">
+          <button class="gallery-btn" id="galleryPrev" aria-label="Photo précédente">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="gallery-btn" id="galleryNext" aria-label="Photo suivante">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+          <a class="gallery-btn download-btn" id="galleryDownload" download aria-label="Télécharger la photo">
+            <i class="fas fa-download"></i>
+          </a>
+        </div>
+      </div>
+      
+      <div class="gallery-thumbnails" id="galleryThumbs"></div>
+    </div>
+  </div>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <figure>
+      <img id="lightboxImg" alt="">
+      <button id="lightboxClose" aria-label="Fermer"><i class="fas fa-xmark"></i></button>
+    </figure>
+  </div>
+
+  <!-- JavaScript Files -->
+  <script src="data/data.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/modals.js"></script>
+  <script src="js/team.js"></script>
+  <script src="js/projects.js"></script>
+  <script src="js/news.js"></script>
+  <script src="js/events.js"></script>
+  <script src="js/competitions.js"></script>
+  <script src="js/achievements.js"></script>
+  <script src="js/contact.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

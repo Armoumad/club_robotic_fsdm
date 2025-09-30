@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark" data-accent="purple">
+<head>
+  <meta charset="UTF-8" />
+  <title>Galerie - FSDM Robotics Club</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Galerie photos des événements du FSDM Robotics Club" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components/header.css">
+  <link rel="stylesheet" href="css/components/gallery-page.css">
+</head>
+<body>
+  <header id="siteHeader">
+    <div id="scrollProgress"></div>
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <img src="images/clubrobotics.png" alt="Logo FSDM Robotics" style="height:50px;vertical-align:middle;">
+        FSDM ROBOTICS
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html"><span>Retour au site</span></a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- GALLERY HERO -->
+  <section class="gallery-hero">
+    <div class="container">
+      <div class="gallery-hero-content">
+        <h1>Galerie Photos</h1>
+        <p>Découvrez tous les moments forts de nos événements</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY CONTENT -->
+  <section class="gallery-content">
+    <div class="container">
+      <div class="gallery-controls">
+        <div class="filter-buttons" id="filterButtons">
+          <button class="filter-btn active" data-filter="all">Tous les événements</button>
+          <!-- Les boutons de filtre seront générés dynamiquement -->
+        </div>
+        <div class="gallery-actions">
+          <button class="btn-small" id="selectAllBtn">
+            <i class="fas fa-check-square"></i> Tout sélectionner
+          </button>
+          <button class="btn-small" id="downloadSelectedBtn">
+            <i class="fas fa-download"></i> Télécharger la sélection
+          </button>
+        </div>
+      </div>
+
+      <div class="event-galleries" id="eventGalleries">
+        <!-- Les galeries d'événements seront générées ici -->
+      </div>
+    </div>
+  </section>
+
+  <!-- JavaScript Files -->
+  <script src="data/data.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/gallery-page.js"></script>
+</body>
+</html>

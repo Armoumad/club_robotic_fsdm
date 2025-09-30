@@ -1,0 +1,121 @@
+/* ---------- COMPETITIONS ---------- */
+.comp-grid{
+  display:grid;
+  gap:clamp(1.2rem,1.8vw,2rem);
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+}
+
+.comp-card{
+  background:linear-gradient(140deg,var(--surface),var(--surface-alt));
+  border:1px solid var(--border);
+  border-radius:30px;
+  padding:1.1rem 1.15rem 1.25rem;
+  display:flex;
+  flex-direction:column;
+  gap:.75rem;
+  position:relative;
+  overflow:hidden;
+  cursor:pointer;
+  transition:var(--trans);
+}
+
+.comp-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 65% 35%,color-mix(in srgb,var(--accent) 25%,transparent),transparent 60%);
+  opacity:0;
+  transition:var(--trans);
+  mix-blend-mode:plus-lighter;
+}
+
+.comp-card:hover{
+  transform:translateY(-6px);
+  border-color:color-mix(in srgb,var(--accent) 55%,transparent);
+}
+
+.comp-card:hover::before{
+  opacity:.9;
+}
+
+.comp-cover{
+  aspect-ratio:16/9;
+  border-radius:20px;
+  overflow:hidden;
+  background:color-mix(in srgb,var(--accent) 18%,transparent);
+}
+
+.comp-cover img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transform:scale(1.05);
+  transition:1s;
+}
+
+.comp-card:hover .comp-cover img{
+  transform:scale(1.12);
+}
+
+.comp-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.45rem;
+}
+
+.comp-tag{
+  font-size:.55rem;
+  font-weight:800;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  padding:.38rem .55rem;
+  border-radius:8px;
+  background:color-mix(in srgb,var(--accent) 18%,transparent);
+  border:1px solid color-mix(in srgb,var(--accent) 40%,transparent);
+  color:var(--accent-alt);
+}
+
+.comp-status.upcoming{
+  background:linear-gradient(120deg,#f59e0b,#fb923c);
+  color:#fff;
+}
+
+.comp-status.past{
+  background:linear-gradient(120deg,#6366f1,#8b5cf6);
+  color:#fff;
+}
+
+.comp-status.active{
+  background:linear-gradient(120deg,#16a34a,#22c55e);
+  color:#fff;
+}
+
+.team-stack{
+  display:flex;
+  margin-top:auto;
+}
+
+.team-stack img{
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  object-fit:cover;
+  border:2px solid var(--surface);
+  margin-left:-10px;
+  box-shadow:0 4px 14px -4px rgba(0,0,0,.4);
+  background:#000;
+}
+
+.comp-badge{
+  position:absolute;
+  top:10px;
+  right:10px;
+  background:var(--grad-accent);
+  color:#fff;
+  font-size:.55rem;
+  font-weight:800;
+  padding:.4rem .55rem;
+  border-radius:9px;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}

@@ -1,0 +1,148 @@
+/* ---------- EVENTS ---------- */
+.event-grid{
+  display:grid;
+  gap:clamp(1.2rem,1.8vw,2rem);
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+}
+
+.event-card{
+  background:linear-gradient(140deg,var(--surface),var(--surface-alt));
+  border:1px solid var(--border);
+  border-radius:26px;
+  padding:1.05rem 1.05rem 1.25rem;
+  display:flex;
+  flex-direction:column;
+  gap:.7rem;
+  transition:var(--trans);
+  position:relative;
+  overflow:hidden;
+}
+
+.event-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 75% 30%,color-mix(in srgb,var(--accent) 25%,transparent),transparent 60%);
+  opacity:0;
+  transition:var(--trans);
+  mix-blend-mode:plus-lighter;
+}
+
+.event-card:hover{
+  transform:translateY(-6px);
+  border-color:color-mix(in srgb,var(--accent) 55%,transparent);
+}
+
+.event-card:hover::before{
+  opacity:.9;
+}
+
+.event-cover{
+  aspect-ratio:16/9;
+  border-radius:18px;
+  overflow:hidden;
+  background:color-mix(in srgb,var(--accent) 18%,transparent);
+}
+
+.event-cover img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transform:scale(1.05);
+  transition:1s;
+}
+
+.event-card:hover .event-cover img{
+  transform:scale(1.12);
+}
+
+.event-meta{
+  font-size:.63rem;
+  letter-spacing:.25em;
+  font-weight:700;
+  color:var(--text-faint);
+  display:flex;
+  gap:.6rem;
+  text-transform:uppercase;
+}
+
+.thumbs{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.35rem;
+}
+
+.thumbs img{
+  width:56px;
+  height:56px;
+  border-radius:14px;
+  object-fit:cover;
+  border:1px solid var(--border);
+  cursor:pointer;
+  transition:var(--trans);
+}
+
+.thumbs img:hover{
+  transform:translateY(-4px) scale(1.05);
+  border-color:var(--accent);
+}
+
+.event-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0 0.95rem;
+}
+
+/* Nouveau style pour le bouton Voir photos amélioré */
+.gallery-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.2rem;
+  font-weight: 700;
+  font-size: 0.75rem;
+  border-radius: 14px;
+  transition: var(--trans);
+  border: 2px solid var(--accent);
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+  color: var(--accent-alt);
+  text-decoration: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-link-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.gallery-link-btn:hover::before {
+  left: 100%;
+}
+
+.gallery-link-btn:hover {
+  background: var(--grad-accent);
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px -8px color-mix(in srgb, var(--accent) 60%, transparent);
+  border-color: transparent;
+}
+
+.gallery-link-btn i {
+  font-size: 0.9rem;
+  transition: transform 0.3s;
+}
+
+.gallery-link-btn:hover i {
+  transform: translateX(3px);
+}
