@@ -87,7 +87,7 @@ const EVENTS = [
     imageCount: 15,
     },
    {
-    id: "e4",
+    id: "e3",
     name: "workshoAI SYSTEMS ",
     date: "2025-1-30",
     location: "fes", 
@@ -95,16 +95,16 @@ const EVENTS = [
     imagesFolder: "assets/events/iasystem/",
     imageCount: 9},
        {
-    id: "e3",
+    id: "e4",
     name: "comp fes 2024 ",
-    date: "2025-11-30",
+    date: "2024-11-30",
     location: "fes", 
     cover: "assets/events/comptfes2024/2.jpg",
     imagesFolder: "assets/events/comptfes2024/",
     imageCount: 9}
     ,
        {
-    id: "e4",
+    id: "e5",
     name: "Journée PFE  ",
     date: "2025-3-10",
     location: "fes", 
@@ -113,7 +113,7 @@ const EVENTS = [
     imageCount: 9}
         ,
        {
-    id: "e5",
+    id: "e6",
     name: " robotics marathon at UM6P’s NRC  ",
     date: "2024-4-10",
     location: "fes", 
