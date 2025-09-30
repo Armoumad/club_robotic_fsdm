@@ -76,7 +76,7 @@ const EVENTS = [
     location: "knetra", 
     cover: "assets/events/compknetra/3.jpg",
     imagesFolder: "assets/events/compknetra/",
-    imageCount: 26} ,
+    imageCount: 25},
     {
     id: "e2",
     name: " Fez Scientific Heritage Festival ",
@@ -84,7 +84,8 @@ const EVENTS = [
     location: "fes", 
     cover: "assets/events/fesma3rid3ilmi/7.jpg",
     imagesFolder: "assets/events/fesma3rid3ilmi/",
-    imageCount: 17},
+    imageCount: 15,
+    },
    {
     id: "e4",
     name: "workshoAI SYSTEMS ",
@@ -103,7 +104,7 @@ const EVENTS = [
     imageCount: 9}
     ,
        {
-    id: "e5",
+    id: "e4",
     name: "Journée PFE  ",
     date: "2025-3-10",
     location: "fes", 
