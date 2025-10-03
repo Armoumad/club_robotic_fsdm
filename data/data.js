@@ -1,76 +1,45 @@
-// data/data.js
+// Media handling system supporting multiple image and video formats
 
-const mediaCache = new Map();
+class MediaHandler {
+    constructor() {
+        this.supportedImageFormats = ['jpg', 'jpeg', 'png', 'webp', 'gif'];
+        this.supportedVideoFormats = ['mp4', 'webm', 'mov', 'avi'];
+        this.cache = {};
+    }
 
-// Supported formats
-const imageFormats = ['jpg', 'jpeg', 'png', 'webp', 'gif'];
-const videoFormats = ['mp4', 'webm', 'mov', 'avi'];
-
-// Asynchronous function to generate media paths
-async function generateMediaPaths(mediaItems) {
-    const mediaPaths = [];
-    for (const item of mediaItems) {
-        try {
-            const exists = await checkMediaExists(item);
-            if (exists) {
-                mediaPaths.push(item);
-            }
-        } catch (error) {
-            console.error(`Error checking media existence for ${item}:`, error);
+    // Detect media type
+    detectMediaType(fileName) {
+        const extension = fileName.split('.').pop().toLowerCase();
+        if (this.supportedImageFormats.includes(extension)) {
+            return 'image';
+        } else if (this.supportedVideoFormats.includes(extension)) {
+            return 'video';
+        } else {
+            throw new Error('Unsupported media format');
         }
     }
-    return mediaPaths;
-}
 
-// Function to check if media exists
-async function checkMediaExists(mediaPath) {
-    // Logic to check if the media exists, e.g., using fs module
-    // Placeholder for actual implementation
-    return mediaPath in mediaCache; // Example check
-}
-
-// Function to find image format
-function findImageFormat(fileName) {
-    const extension = fileName.split('.').pop().toLowerCase();
-    if (imageFormats.includes(extension)) {
-        return extension;
-    } else {
-        throw new Error(`Unsupported image format: ${extension}`);
+    // Cache media
+    cacheMedia(fileName, mediaData) {
+        this.cache[fileName] = mediaData;
     }
-}
 
-// Function to find video format
-function findVideoFormat(fileName) {
-    const extension = fileName.split('.').pop().toLowerCase();
-    if (videoFormats.includes(extension)) {
-        return extension;
-    } else {
-        throw new Error(`Unsupported video format: ${extension}`);
-    }
-}
-
-// Backward compatibility with synchronous function
-function generateImagePathsSync(mediaItems) {
-    // Synchronous logic for generating image paths
-    return mediaItems.filter(item => {
+    // Load media with error handling
+    loadMedia(fileName) {
         try {
-            return findImageFormat(item);
+            const mediaType = this.detectMediaType(fileName);
+            // Logic to load the media
+            console.log(`Loading ${mediaType}: ${fileName}`);
+            // Here you can add actual loading logic, e.g., using fetch or FileReader
+            return this.cache[fileName] || 'Media not found in cache';
         } catch (error) {
-            console.warn(error.message);
-            return false;
+            console.error(`Error loading media: ${error.message}`);
         }
-    });
+    }
 }
 
-// Updated EVENTS array structure
-const EVENTS = [
-    {
-        mediaCount: 10,
-        mediaItems: await generateMediaPaths(['image1.jpg', 'video1.mp4']),
-        // Other event properties...
-    },
-    // Additional events...
-];
-
-// Export functions and constants if needed
-export { generateMediaPaths, checkMediaExists, findImageFormat, findVideoFormat, generateImagePathsSync, EVENTS };
+// Example usage
+const mediaHandler = new MediaHandler();
+mediaHandler.cacheMedia('example.jpg', 'Image data...');
+mediaHandler.loadMedia('example.jpg');
+mediaHandler.loadMedia('example.mp4');
