@@ -74,8 +74,8 @@ const EVENTS = [
     name: "Competeion knetra",
     date: "2025-04-30",
     location: "knetra", 
-    cover: "assets/events/compknetra/3.jpg",
-    imagesFolder: "assets/events/compknetra/",
+    cover: "assets/events/knetrecomp/3.jpg",
+    imagesFolder: "assets/events/knetrecomp/",
     imageCount: 25},
     {
     id: "e2",
@@ -119,6 +119,15 @@ const EVENTS = [
     location: "fes", 
     cover: "assets/events/um6pcomp/4.jpg",
     imagesFolder: "assets/events/um6pcomp/",
+    imageCount: 15}
+            ,
+       {
+    id: "e7",
+    name: "   𝐈𝐍𝐉𝐀𝐙 𝐀𝐥-𝐌𝐚𝐠𝐡𝐫𝐢𝐛 ",
+    date: "2025-6-10",
+    location: "fes", 
+    cover: "assets/events/injaz/7.jpg",
+    imagesFolder: "assets/events/injaz/",
     imageCount: 15}
   ];
 
