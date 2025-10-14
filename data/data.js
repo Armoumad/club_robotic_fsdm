@@ -129,6 +129,15 @@ const EVENTS = [
     cover: "assets/events/injaz/7.jpg",
     imagesFolder: "assets/events/injaz/",
     imageCount: 15}
+                ,
+       {
+    id: "e7",
+    name: "comp mknes 2025",
+    date: "2025-3-10",
+    location: "meknes", 
+    cover: "assets/events/mknesscomp/7.jpg",
+    imagesFolder: "assets/events/mknesscomp/",
+    imageCount: 15}
   ];
 
 const COMPETITIONS = [
@@ -169,7 +178,9 @@ function getEventImages(eventId) {
     console.warn(`Événement ${eventId} non trouvé`);
     return [];
   }
+   
 
   const images = generateImagePaths(event);
   console.log(`Images pour ${event.name}:`, images); // Debug
   return images;
+ }
